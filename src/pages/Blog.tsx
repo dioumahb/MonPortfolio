@@ -21,7 +21,7 @@ import {
   Star,
   Filter,
 } from "lucide-react";
-import { portfolioData } from "@shared/portfolio-data";
+import { portfolioData } from "@src/shared/portfolio-data";
 
 export default function Blog() {
   const { blog } = portfolioData;

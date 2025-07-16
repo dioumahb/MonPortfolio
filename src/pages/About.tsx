@@ -18,7 +18,7 @@ import {
   Mail,
   ArrowRight,
 } from "lucide-react";
-import { portfolioData } from "@shared/portfolio-data";
+import { portfolioData } from "@src/shared/portfolio-data";
 
 export default function About() {
   const { personal, skills, experiences, education } = portfolioData;

@@ -19,7 +19,7 @@ import {
   Smartphone,
   Monitor,
 } from "lucide-react";
-import { portfolioData, Project } from "@shared/portfolio-data";
+import { portfolioData, Project } from "@src/shared/portfolio-data";
 
 export default function Projects() {
   const { projects } = portfolioData;

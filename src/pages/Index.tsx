@@ -22,7 +22,7 @@ import {
   Linkedin,
   MapPin,
 } from "lucide-react";
-import { portfolioData } from "@shared/portfolio-data";
+import { portfolioData } from "@src/shared/portfolio-data";
 
 export default function Index() {
   const { personal, skills, projects, experiences } = portfolioData;

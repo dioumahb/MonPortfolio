@@ -19,7 +19,7 @@ import {
   Award,
   Briefcase,
 } from "lucide-react";
-import { portfolioData } from "@shared/portfolio-data";
+import { portfolioData } from "@src/shared/portfolio-data";
 
 export default function Testimonials() {
   const { testimonials } = portfolioData;
