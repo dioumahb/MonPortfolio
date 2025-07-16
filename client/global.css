@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* BMD Technologies Brand Colors - Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 222 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 15% 20%;
+
+    /* Primary: Tailwind Blue-500 */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: BMD Purple */
+    --secondary: 271 76% 53%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Accent: Light BMD Blue */
+    --accent: 214 95% 92%;
+    --accent-foreground: 214 85% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Status Colors */
+    --success: 120 70% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 43 96% 55%;
+    --warning-foreground: 25 5% 15%;
+    --info: 214 85% 65%;
+    --info-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    /* BMD Technologies Brand Colors - Dark Theme */
+    --background: 222 25% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 222 25% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 222 25% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    /* Primary: Tailwind Blue-400 for dark theme */
+    --primary: 216 87% 65%;
+    --primary-foreground: 222 25% 8%;
+
+    /* Secondary: Lighter Purple for dark theme */
+    --secondary: 271 76% 63%;
+    --secondary-foreground: 222 25% 8%;
+
+    --muted: 217 25% 18%;
+    --muted-foreground: 215 15% 65%;
+
+    /* Accent: Dark BMD Blue */
+    --accent: 214 50% 18%;
+    --accent-foreground: 214 85% 85%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 210 20% 92%;
+
+    --border: 217 25% 20%;
+    --input: 217 25% 20%;
+    --ring: 216 87% 65%;
+
+    /* Status Colors for Dark Theme */
+    --success: 120 70% 60%;
+    --success-foreground: 222 25% 8%;
+    --warning: 43 96% 65%;
+    --warning-foreground: 25 5% 10%;
+    --info: 214 85% 70%;
+    --info-foreground: 222 25% 8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  /* BMD Technologies Custom Styles */
+  .bmd-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(217, 91%, 60%) 0%,
+      hsl(271, 76%, 53%) 100%
+    );
+  }
+
+  .bmd-text-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(217, 91%, 60%) 0%,
+      hsl(271, 76%, 53%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Grid background pour sections hero */
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, hsl(214, 20%, 90%) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(214, 20%, 90%) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .dark .grid-bg {
+    background-image:
+      linear-gradient(to right, hsl(217, 25%, 20%) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(217, 25%, 20%) 1px, transparent 1px);
+  }
+}
+
+@layer components {
+  /* BMD Button Components */
+  .bmd-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .bmd-btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .bmd-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-4 py-2 bg-secondary text-secondary-foreground hover:bg-secondary/90;
+  }
+
+  .bmd-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply h-10 px-4 py-2 hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .bmd-btn-lg {
+    @apply h-11 rounded-md px-8 text-base;
+  }
+
+  .bmd-btn-sm {
+    @apply h-9 rounded-md px-3;
+  }
+
+  /* BMD Badge Components */
+  .bmd-badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
+  }
+
+  .bmd-badge-secondary {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .bmd-badge-outline {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply text-foreground;
+  }
+
+  /* BMD Card Components */
+  .bmd-card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .bmd-card-header {
+    @apply flex flex-col space-y-1.5 p-6;
+  }
+
+  .bmd-card-body {
+    @apply p-6 pt-0;
+  }
+
+  .bmd-card-title {
+    @apply text-2xl font-semibold leading-none tracking-tight;
+  }
+
+  .bmd-card-description {
+    @apply text-sm text-muted-foreground;
+  }
+
+  /* BMD Layout Components */
+  .bmd-hero {
+    @apply relative overflow-hidden py-24 sm:py-32;
+    background: linear-gradient(
+      135deg,
+      hsl(214, 85%, 95%) 0%,
+      hsl(0, 0%, 100%) 50%,
+      hsl(271, 76%, 95%) 100%
+    );
+  }
+
+  .dark .bmd-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(214, 25%, 12%) 0%,
+      hsl(222, 25%, 8%) 50%,
+      hsl(271, 25%, 12%) 100%
+    );
+  }
+
+  .bmd-section {
+    @apply py-16 bg-background;
+  }
+
+  .bmd-section-alt {
+    @apply py-16 bg-muted/30;
+  }
+
+  /* Navigation Components */
+  .bmd-nav {
+    @apply sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+  }
+
+  .bmd-nav-container {
+    @apply container flex h-16 max-w-screen-2xl items-center;
+  }
+
+  .bmd-nav-menu {
+    @apply hidden md:flex items-center space-x-6 text-sm font-medium;
+  }
+
+  .bmd-nav-link {
+    @apply transition-colors hover:text-primary;
+  }
+
+  .bmd-nav-link-active {
+    @apply text-primary;
+  }
+
+  .bmd-nav-link-inactive {
+    @apply text-foreground/60;
+  }
+
+  /* Animation helpers */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .slide-in {
+    @apply animate-slide-in;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
